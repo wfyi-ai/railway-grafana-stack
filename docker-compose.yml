@@ -10,6 +10,11 @@ services:
       - "9090:9090"
     volumes:
       - prometheus_data:/prometheus
+    environment:
+      # This passes the value to the container so entrypoint.sh can use it
+      - FYLFLIX_TARGET=host.docker.internal:3000
+      # Or use a variable from your host's .env file:
+      # - FYLFLIX_TARGET=${HOST_TARGET_VAR}
 
   loki:
     build:
