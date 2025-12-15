@@ -9,7 +9,7 @@ scrape_configs:
   - job_name: 'fylflix'
     scrape_interval: 5s
     static_configs:
-      - targets: ['fylflix.railway.internal:8081']
+      - targets: ['${FYLFLIX_TARGET}']
 
   # - job_name: 'example_api'
   #   scheme: http
